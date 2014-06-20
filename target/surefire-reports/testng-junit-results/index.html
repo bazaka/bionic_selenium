@@ -90,7 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">0 methods,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-testpack.smokeTest" class="hide-methods passed suite-testpack.smokeTest"> (hide)</a> <!-- hide-methods passed suite-testpack.smokeTest -->
+                      <a href="#" panel-name="suite-testpack.smokeTest" class="show-methods passed suite-testpack.smokeTest"> (show)</a> <!-- show-methods passed suite-testpack.smokeTest -->
+                    </span>
+                    <div class="method-list-content passed suite-testpack.smokeTest">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-testpack.smokeTest" title="testpack.smokeTest" hash-for-method="sTest">sTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-testpack.smokeTest -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -102,6 +116,21 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-testpack.smokeTest" class="panel testpack.smokeTest">
+          <div class="suite-testpack.smokeTest-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testpack.smokeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="sTest">
+                  </a> <!-- sTest -->
+                  <span class="method-name">sTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-testpack.smokeTest-class-passed -->
         </div> <!-- panel testpack.smokeTest -->
         <div panel-name="test-xml-testpack.smokeTest" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -111,11 +140,11 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite thread-count=&quot;1&quot; verbose=&quot;0&quot; name=&quot;testpack.smokeTest&quot; junit=&quot;true&quot;&gt;
-  &lt;test name=&quot;Command line test 1cbe01e2-7150-48df-8806-dcd8933070fd&quot;&gt;
+  &lt;test name=&quot;Command line test 529a170f-b6c7-46b5-be9c-1ff18a353ec0&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testpack.smokeTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Command line test 1cbe01e2-7150-48df-8806-dcd8933070fd --&gt;
+  &lt;/test&gt; &lt;!-- Command line test 529a170f-b6c7-46b5-be9c-1ff18a353ec0 --&gt;
 &lt;/suite&gt; &lt;!-- testpack.smokeTest --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -127,7 +156,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Command line test 1cbe01e2-7150-48df-8806-dcd8933070fd (1 class)</span>
+                <span class="test-name">Command line test 529a170f-b6c7-46b5-be9c-1ff18a353ec0 (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -153,11 +182,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(0);
+data.addRows(1);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'sTest')
+data.setCell(0, 2, 'testpack.smokeTest')
+data.setCell(0, 3, 13);
 window.suiteTableData['testpack.smokeTest']= { tableData: data, tableDiv: 'times-div-testpack.smokeTest'}
 return data;
 }
               </script>
+              <span class="suite-total-time">Total running time: 13 ms</span>
               <div id="times-div-testpack.smokeTest">
               </div> <!-- times-div-testpack.smokeTest -->
             </div> <!-- times-div -->
@@ -182,6 +216,12 @@ return data;
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">testpack.smokeTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">sTest</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
