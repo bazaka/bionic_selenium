@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="0" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="testpack.Test" duration-ms="19" started-at="2014-06-18T18:16:59Z" finished-at="2014-06-18T18:16:59Z">
+    <groups>
+    </groups>
+    <test name="Command line test f46b5adb-b4cd-488a-82ac-b3aaed5d2c07" duration-ms="19" started-at="2014-06-18T18:16:59Z" finished-at="2014-06-18T18:16:59Z">
+    </test> <!-- Command line test f46b5adb-b4cd-488a-82ac-b3aaed5d2c07 -->
+  </suite> <!-- testpack.Test -->
+</testng-results>
