@@ -4,7 +4,7 @@
     <test name="SortTest" >
         <classes>
             <!-- class name="testing.SmokeTest"/ -->
-            <class name="testing.SmokeTest"/>
+            <class name="testing.BuySmartphoneClass"/>
             <!-- class name="testing.SmartestTest"/ -->
         </classes>
     </test>
