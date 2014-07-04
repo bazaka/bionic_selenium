@@ -27,6 +27,7 @@ public class BuySmartphoneClass {
        // @Test
         WebDriver driver = new FirefoxDriver() ;
         WebDriverWait wait = new WebDriverWait(driver, 10);
+
         driver.get("http://rozetka.com.ua/");
         driver.manage().window().maximize();
         String text = driver.findElement(By.className("m-cart-empty")).getText() ;
@@ -34,6 +35,7 @@ public class BuySmartphoneClass {
 
         Actions builder = new Actions(driver);
         builder.moveToElement(driver.findElement(By.id("phones-mp3-gps")));
+
         builder.perform();                        //запустить последовательность действий
 
 
@@ -61,11 +63,19 @@ public class BuySmartphoneClass {
         //wait.until(ExpectedConditions.titleContains("Rozetka.ua"));     //back to the page
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("gift_checkbox")));
 
-        String text1 = driver.findElement(By.name("open_cart")).getText() ;
+       String text1 = driver.findElement(By.name("open_cart")).getText() ;
         //Assert.assertFalse(text, text1);
+       /*if (driver.findElement(By.name("open_cart")).getText().contains("1")){
+            System.out.println("Cart has 1 order");
+            driver.quit();
+        }
+
+       else System.out.println("Cart is empty");*/
+
         Assert.assertNotEquals(text, text1); // check that cart name before and cart name after are different
-       // Assert.assertNotEquals(text, text1, "Cart has been changed");
         driver.quit();
+       // Assert.assertNotEquals(text, text1, "Cart has been changed");
+
 
 
 

@@ -1,29 +1,28 @@
 package testing;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Yuri on 7/1/2014.
+ * Created by Yuri on 7/4/2014.
  */
-public class ProjectRozetkaTest {
+public class FindSimilarGoads {
+
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static Actions builder;
 
 
-    @BeforeMethod
+
+    @BeforeSuite
     public void preCondition(){
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
@@ -31,29 +30,6 @@ public class ProjectRozetkaTest {
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver,10);
         builder = new Actions(driver);
-
-    }
-
-    @Test
-    public void orderTicketForBabies(){
-
-        builder.moveToElement(driver.findElement(By.id("fatmenu_14")));
-        builder.perform();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"fatmenu_14\"]/div/div/ol/li[1]/ul/li[9]/a")));
-
-        driver.findElement(By.xpath("//*[@id=\"fatmenu_14\"]/div/div/ol/li[1]/ul/li[1]/a")).click(); //click to tickets order menu
-        wait.until(ExpectedConditions.elementToBeClickable(By.className("persons")));
-
-        driver.findElement(By.xpath(".//*[@id='content']/div/div/div/div/div[2]/div[2]/div[2]/div[1]")).click(); //click on the adult man icon
-        //String text = driver.findElement(By.xpath(".//*[@id='content']/div/div/div/div/div[2]/div[2]/div[1]/span")).getText();
-        //Assert.assertEquals(text,"1");
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(".//*[@id='content']/div/div/div/div/div[2]/div[2]/div[1]/span"),"0")); // checked that 0 adult man was chosen
-
-        driver.findElement(By.xpath(".//*[@id='content']/div/div/div/div/div[2]/div[4]/div[2]/div[2]")).click(); // click on 2 babies
-        wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(".//*[@id='content']/div/div/div/div/div[2]/div[4]/div[1]/span"),"2"));
-
-        driver.findElement(By.id("start_search")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='head_banner_container']/div[5]")));
 
     }
     @Test
@@ -110,7 +86,7 @@ public class ProjectRozetkaTest {
 
     }
 
-    @AfterMethod
+    @AfterSuite
     public void postCondition(){
         if(driver!=null)
             driver.quit();
@@ -118,4 +94,3 @@ public class ProjectRozetkaTest {
 
 
 }
-
