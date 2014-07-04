@@ -22,6 +22,7 @@ public class InfantRozetkaTest {
     public static WebDriverWait wait;
     public static Actions builder;
 
+
     private static final By aviaTickets = By.id("fatmenu_14");
     private static final By aviaDirection = By.xpath("//a[contains(@*, 'travel/IEV/MOW/')]");
     private static final By twoBabiesIcon = By.xpath("//*[@data-field='infants']/*[@class='persons']/div[2]");

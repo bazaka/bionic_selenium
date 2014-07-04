@@ -4,8 +4,10 @@
     <test name="ProjectRozetkaTest" >
         <classes>
             <!-- class name="testing.SmokeTest"/ -->
+
             <class name="testing.InfantRozetkaTest"/>
-            <!-- class name="testing.SmartestTest"/ -->
+
+            <class name="testing.FindSimilarGoods"/>
         </classes>
     </test>
 </suite>

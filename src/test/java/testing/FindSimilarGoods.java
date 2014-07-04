@@ -1,6 +1,7 @@
 package testing;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -9,16 +10,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Yuri on 7/4/2014.
  */
-public class FindSimilarGoads {
+public class FindSimilarGoods {
 
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static Actions builder;
+
+
+    public static final By phonesList = By.id("phones-mp3-gps");
+    public static final By phonesListClick = By.xpath("//a[contains(@*, 'phones-mp3-gps')]");
+    public static final By clickOnSmart = By.xpath(".//*[@name='menu_categories_left']/li[1]//li[2]/a");
+    public static final By clickOnApple = By.xpath(".//*[@name='menu_categories_left']/li[2]//li[1]/a");
+    public static final By firstGood = By.xpath(".//*[@name=\"goods_list\"]/div[1]//*[@class='gtile-i-title']");
+    public static final By secondGood = By.xpath(".//*[@name=\"goods_list\"]/div[2]//*[@class='gtile-i-title']");
 
 
 
@@ -33,7 +43,40 @@ public class FindSimilarGoads {
 
     }
     @Test
+    public void findSimilarGoods()
+
+    {
+        builder.moveToElement(driver.findElement(phonesList)).perform();
+        driver.findElement(phonesListClick).click();
+        wait.until(ExpectedConditions.titleContains("MP3, GPS"));
+        driver.findElement(clickOnSmart).click();
+        wait.until(ExpectedConditions.elementToBeClickable(clickOnApple));
+        driver.findElement(clickOnApple).click();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(clickOnApple));
+
+        String model1 = driver.findElement(firstGood).getText();
+        String model2 = driver.findElement(secondGood).getText();
+
+        Assert.assertEquals(model1.startsWith("Apple iPhone 5s"), model2.startsWith("Apple iPhone 5s"));
+
+
+       /*  List[] str = new List[2];
+       for(int i=1; i<3; i++){
+
+            //builder.moveToElement(By.xpath(".//*[@name=\"goods_list\"]/div[" + i + "]"));
+            str[i].add(driver.findElement(By.xpath(".//*[@name=\"goods_list\"]/div[" + i + "]//*[@class='gtile-i-title']")).getText());
+            //str. = driver.findElement(By.xpath(".//*[@name=\"goods_list\"]/div[" + i + "]//*[@class='gtile-i-title']")).getText();
+            System.out.println(str[i]);
+        }*/
+
+
+    }
+    /*@Test
     public void findAndCheckSimilarGoads(){
+
+
+
+
         builder.moveToElement(driver.findElement(By.id("phones-mp3-gps")));
         builder.perform();
 
@@ -60,10 +103,7 @@ public class FindSimilarGoads {
         if (!driver.findElement(By.xpath(".//*[@id='block_with_goods']/div/div[1]/div[1]/div[1]/div/div/div[5]/div[1]/label/input")).isSelected()) //click on the comparison checkbox
             driver.findElement(By.xpath(".//*[@id='block_with_goods']/div/div[1]/div[1]/div[1]/div/div/div[5]/div[1]/label/input")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("list-compare")));
-       /* builder.sendKeys(Keys.PAGE_UP).perform();
-        builder.moveToElement(driver.findElement(By.id("image_item735259"))).perform();
-        wait.until(ExpectedConditions.elementToBeSelected(By.xpath(".//*[@id='block_with_goods']/div/div[1]/div[1]/div[1]/div/div/div[5]/div[1]/label/input")));
-        */
+
 
 
         builder.moveToElement(driver.findElement(By.id("image_item287281"))).perform();
@@ -84,7 +124,7 @@ public class FindSimilarGoads {
 
         // "ONLY DIFFERENT" MENU IS WORKING BECAUSE ALL SIMILAR ELEMENTS (SUCH AS "Operating System") ARE INVISIBLE ON THE PAGE
 
-    }
+    }*/
 
     @AfterSuite
     public void postCondition(){
