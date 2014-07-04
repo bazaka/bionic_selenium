@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Yuri on 7/1/2014.
  */
-public class InfantRozetkaTest {
+public class InfantRozetkaTest extends BasicTest {
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static Actions builder;
