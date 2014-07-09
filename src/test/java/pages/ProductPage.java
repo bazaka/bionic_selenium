@@ -39,6 +39,7 @@ public class ProductPage extends BasePage {
         driver.findElement(searchString).sendKeys(modelName);
         driver.findElement(searchString).sendKeys(Keys.ENTER);
         Log4Test.info("Checking successfully finding ");
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return driver.findElement(By.xpath(String.format(productNameLocator,modelName))).isDisplayed();
 
     }
