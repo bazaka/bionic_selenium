@@ -1,17 +1,12 @@
 package testing;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.*;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
+import org.testng.annotations.Test;
 
 /**
  * Created by Yuri on 7/4/2014.
@@ -23,25 +18,11 @@ public class FindSimilarGoods {
     public static Actions builder;
 
 
-    public static final By phonesList = By.id("phones-mp3-gps");
-    public static final By phonesListClick = By.xpath("//a[contains(@*, 'phones-mp3-gps')]");
-    public static final By clickOnSmart = By.xpath(".//*[@name='menu_categories_left']/li[1]//li[2]/a");
-    public static final By clickOnApple = By.xpath(".//*[@name='menu_categories_left']/li[2]//li[1]/a");
-    public static final By firstGood = By.xpath(".//*[@name=\"goods_list\"]/div[1]//*[@class='gtile-i-title']");
-    public static final By secondGood = By.xpath(".//*[@name=\"goods_list\"]/div[2]//*[@class='gtile-i-title']");
 
 
 
-    @BeforeSuite
-    public void preCondition(){
-        driver = new FirefoxDriver();
-        driver.manage().window().maximize();
-        driver.get("http://rozetka.com.ua");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver,10);
-        builder = new Actions(driver);
 
-    }
+
     @Test
     public void findSimilarGoods()
 
@@ -126,11 +107,7 @@ public class FindSimilarGoods {
 
     }*/
 
-    @AfterSuite
-    public void postCondition(){
-        if(driver!=null)
-            driver.quit();
-    }
+
 
 
 }

@@ -1,7 +1,6 @@
 package testing;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -17,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Yuri on 7/1/2014.
  */
-public class InfantRozetkaTest {
+public class InfantRozetkaTest extends BaseTest {
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static Actions builder;

@@ -1,4 +1,4 @@
-package core;
+package old;
 
 public class QuadraticEquation {
     public double a;
