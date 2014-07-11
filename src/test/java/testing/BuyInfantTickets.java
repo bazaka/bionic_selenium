@@ -1,7 +1,6 @@
 package testing;
 
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.TicketsPage;
 import utils.Log4Test;
@@ -15,16 +14,10 @@ import utils.Log4Test;
  */
 public class BuyInfantTickets extends BaseTest {
 
-    @DataProvider(name = "buyInfantTickets")
-    public Object [][] createData(){
-        return new Object[][]{
-               new Object[] {2, 4},
 
-        };
-    }
     @Test(dataProvider = "buyInfantTickets")
     public void buyTwoInfantTicktets(int adults, int infants){
-        Log4Test.info("--- Start BuyInfantTicket test ---");
+        Log4Test.info("Start test");
         TicketsPage ticketPage = new TicketsPage(driver);
         Log4Test.info("Open ticket page");
         ticketPage.open();
@@ -32,6 +25,6 @@ public class BuyInfantTickets extends BaseTest {
         Log4Test.info("Choosing value of adults and infants");
         ticketPage.buyChildTicket(adults,infants);
         Assert.assertTrue(ticketPage.isError(), Log4Test.error("Error message is not displayed"));
-        Log4Test.info("--- End of BuyInfantTicket test ---");
+        Log4Test.info("Bingo!");
     }
 }

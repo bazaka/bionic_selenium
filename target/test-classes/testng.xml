@@ -6,6 +6,8 @@
 
 
             <class name="testing.BuyInfantTickets"/>
+            <class name="testing.SimilarProductsTest"/>
+            <class name="testing.CompareTest"/>
 
 
         </classes>

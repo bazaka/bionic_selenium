@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 /**
  * Created by Yuri on 7/9/2014.
  */
-public class SimilarGoodPage{//} extends BasePage{
+public class nothing {//} extends BasePage{
 
     public static Actions builder;
 
@@ -22,7 +22,7 @@ public class SimilarGoodPage{//} extends BasePage{
 
     }
 
-    public SimilarGoodPage(WebDriver driver){   //?
+    public nothing(WebDriver driver){   //?
        // super(driver);
         //URL = "http://rozetka.com.ua";
     }
