@@ -15,7 +15,6 @@ public class CompareTest extends BaseTest {
     public void compareModelTest(String modelName1, String modelName2){
 
         ProductPage page = new ProductPage(driver);
-
         page.login();
         //page.open();
         //Assert.assertTrue(page.isOpened(), Log4Test.info("Page doesn't opened"));

@@ -2,6 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utils.Log4Test;
 
 /**
  * Created with IntelliJ IDEA.
@@ -36,20 +39,22 @@ public class TicketsPage extends BasePage {
     }
 
     public void buyChildTicket(int adults, int infants){
-        //WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver,10);
 
         if (Integer.parseInt(driver.findElement(valueOfAdults).getText()) != adults)
             driver.findElement(By.xpath(String.format(adultTickets,adults))).click();
 
         if (Integer.parseInt(driver.findElement(valueOfInfants).getText()) != infants)
             driver.findElement(By.xpath(String.format(infantTickets,infants))).click();
-
+        Log4Test.info("Start search");
         driver.findElement(startSearch).click();
-        //exp cond errormessage visible
-       // driver.findElement(By.xpath())
+        wait.until(ExpectedConditions.presenceOfElementLocated(errorMessage));
+        Log4Test.info("Bingo!");
+
 
     }
     public boolean isError(){
+
         return driver.findElements(errorMessage).size() > 0;
     }
 

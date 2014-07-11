@@ -11,7 +11,8 @@ import org.openqa.selenium.WebDriver;
  */
 //abstract
 class BasePage {
-    protected String URL="http://rozetka.com.ua";  //="rozetka"
+
+    protected String URL="http://rozetka.com.ua/";  //="rozetka"
     protected WebDriver driver;
 
 
@@ -19,12 +20,12 @@ class BasePage {
         this.driver=driver;                      //initializ svoi driver      this - обратиться к классу отделяем зис.драйвер от вебдрайве.драйвер
     }
 
-    public  void open(){
+    public void open(){
         driver.get(URL);
-
     }
 
     public  boolean isOpened(){
+
         return driver.getCurrentUrl().equals(URL) ;
     }
 

@@ -31,14 +31,14 @@ public class ProductPage extends BasePage {
     {
         BasePage openPage = new BasePage(driver);
         openPage.open();
-       // Assert.assertTrue(openPage.isOpened(), Log4Test.error("Could not open page"));
+        Assert.assertTrue(openPage.isOpened(),Log4Test.error("Could not open page"));
     }
     public boolean searchModel (String modelName){
         Log4Test.info("Entering product name: " +modelName);
         driver.findElement(searchString).clear();
         driver.findElement(searchString).sendKeys(modelName);
         driver.findElement(searchString).sendKeys(Keys.ENTER);
-        Log4Test.info("Checking successfull finding ");
+        Log4Test.info("Checking successfully finding ");
         return driver.findElement(By.xpath(String.format(productNameLocator,modelName))).isDisplayed();
 
     }
