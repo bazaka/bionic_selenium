@@ -2,12 +2,8 @@ package testing;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,6 +14,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class BaseTest {
     public static WebDriver driver;
+
+
 
 
     @BeforeSuite

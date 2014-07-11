@@ -1,6 +1,7 @@
 package testing;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.TicketsPage;
 import utils.Log4Test;
@@ -14,16 +15,23 @@ import utils.Log4Test;
  */
 public class BuyInfantTickets extends BaseTest {
 
-    @Test
-    public void buyTwoInfantTicktets(){
+    @DataProvider(name = "buyInfantTickets")
+    public Object [][] createData(){
+        return new Object[][]{
+               new Object[] {2, 4},
+
+        };
+    }
+    @Test(dataProvider = "buyInfantTickets")
+    public void buyTwoInfantTicktets(int adults, int infants){
         Log4Test.info("--- Start BuyInfantTicket test ---");
-        TicketsPage page = new TicketsPage(driver);
+        TicketsPage ticketPage = new TicketsPage(driver);
         Log4Test.info("Open ticket page");
-        page.open();
-        Assert.assertTrue(page.isOpened(), Log4Test.error("Page is not opened"));
+        ticketPage.open();
+        Assert.assertTrue(ticketPage.isOpened(), Log4Test.error("Page is not opened"));
         Log4Test.info("Choosing value of adults and infants");
-        page.buyChildTicket(1,2);
-        Assert.assertTrue(page.isError(), Log4Test.error("Error message is not displayed"));
+        ticketPage.buyChildTicket(adults,infants);
+        Assert.assertTrue(ticketPage.isError(), Log4Test.error("Error message is not displayed"));
         Log4Test.info("--- End of BuyInfantTicket test ---");
     }
 }

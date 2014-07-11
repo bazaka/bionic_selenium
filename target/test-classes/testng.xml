@@ -3,11 +3,11 @@
 <suite name="Project-Rozetka" verbose="1" >
     <test name="ProjectRozetkaTest" >
         <classes>
-            <!-- class name="testing.SmokeTest"/ -->
 
-            <class name="testing.InfantRozetkaTest"/>
 
-            <class name="testing.FindSimilarGoods"/>
+            <class name="testing.BuyInfantTickets"/>
+
+
         </classes>
     </test>
 </suite>

@@ -1,16 +1,8 @@
 package testing;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Yuri on 7/4/2014.
@@ -18,8 +10,8 @@ import java.util.concurrent.TimeUnit;
 public class CompareModels {
     public static WebDriver driver;
     public static WebDriverWait wait;
-    public static Actions builder;
-
+    public static Actions builder;}
+/*
     public static final By firstGoodComparing = By.xpath(".//*[@name=\"goods_list\"]/div[1]//*[@name='tocomparison']");
     public static final By secondGoodComparing = By.xpath(".//*[@name=\"goods_list\"]/div[2]//*[@type='checkbox']");
     public static final By moveToFirstGood = By.xpath(".//*[@name='goods_list']/div[1]");
@@ -72,4 +64,4 @@ public class CompareModels {
         if(driver!=null)
             driver.quit();
     }
-}
+}*/

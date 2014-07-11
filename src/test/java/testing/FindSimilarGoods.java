@@ -1,12 +1,8 @@
 package testing;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
 /**
  * Created by Yuri on 7/4/2014.
@@ -16,9 +12,9 @@ public class FindSimilarGoods {
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static Actions builder;
+}
 
-
-
+/*
 
 
 
@@ -51,7 +47,7 @@ public class FindSimilarGoods {
         }*/
 
 
-    }
+   // }
     /*@Test
     public void findAndCheckSimilarGoads(){
 
@@ -110,4 +106,4 @@ public class FindSimilarGoods {
 
 
 
-}
+//}
