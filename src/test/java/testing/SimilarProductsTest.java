@@ -9,14 +9,16 @@ import utils.Log4Test;
  */
 public class SimilarProductsTest extends BaseTest {
 
-    @Test(dataProvider = "comparingModels")
-    public void similarProductsTest(String modelName1, String modelName2){
+    @Test(dataProvider = "comparingModels", dataProviderClass = DataProviders.class)
+    public void similarProductsTest(String comparingModels[]){
         ProductPage page = new ProductPage(driver);
         page.login();
-        page.searchModel(modelName1);
-        page.validateProduct(modelName1);
-        page.searchModel(modelName2);
-        page.validateProduct(modelName2);
+        for (String model : comparingModels) {
+            page.searchModel(model);
+            page.validateProduct(model);
+        }
+       // page.searchModel(modelName2);
+       // page.validateProduct(modelName2);
         Log4Test.info("Bingo!");
 
 

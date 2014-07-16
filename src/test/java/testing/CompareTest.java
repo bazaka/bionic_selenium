@@ -11,23 +11,23 @@ import utils.Log4Test;
 public class CompareTest extends BaseTest {
 
 
-    @Test(dataProvider = "comparingModels")
-    public void compareModelTest(String modelName1, String modelName2){
+    @Test(dataProvider = "comparingModels", dataProviderClass = DataProviders.class)
+    public void compareModelTest(String comparingModels[]){
 
         ProductPage page = new ProductPage(driver);
         page.login();
         //page.open();
         //Assert.assertTrue(page.isOpened(), Log4Test.info("Page doesn't opened"));
-        Log4Test.info("Searching model" +modelName1);
-        page.searchModel(modelName1);
-        page.addToCompare();
-        page.searchModel(modelName2);
-        page.addToCompare();
+        for (String models : comparingModels) {
+
+            page.searchModel(models);
+            page.addToCompare();
+        }
         page.toCompareCatalog();
 
         ComparePage comparePage = new ComparePage(driver);
-        Log4Test.info("Checking that compare works");
-        comparePage.compareWorks(modelName1, modelName2);
+
+        comparePage.compareWorks(comparingModels);
         Log4Test.info("Bingo!!");
 
     }

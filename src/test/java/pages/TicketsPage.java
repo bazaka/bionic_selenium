@@ -40,7 +40,7 @@ public class TicketsPage extends BasePage {
 
     public void buyChildTicket(int adults, int infants){
         WebDriverWait wait = new WebDriverWait(driver,10);
-
+        Log4Test.info("Choosing value of adults and infants");
         if (Integer.parseInt(driver.findElement(valueOfAdults).getText()) != adults)
             driver.findElement(By.xpath(String.format(adultTickets,adults))).click();
 

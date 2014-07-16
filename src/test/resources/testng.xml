@@ -8,6 +8,8 @@
             <class name="testing.TicketsTest"/>
             <class name="testing.SimilarProductsTest"/>
             <class name="testing.CompareTest"/>
+            <class name="testing.CompareDifferentTest"/>
+            <class name="testing.HomeWork4"/>
 
 
         </classes>

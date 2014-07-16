@@ -17,20 +17,6 @@ import utils.PropertyLoader;
 public class BaseTest {
     public static WebDriver driver;
 
-    @DataProvider(name="comparingModels")
-    public Object[][] createData(){
-        return new Object[][]{
-                {"Apple iPhone 5s","Apple iPhone 5c"}
-        };
-    }
-
-    @DataProvider(name = "buyInfantTickets")
-    public Object [][] createData1(){
-        return new Object[][]{
-                new Object[] {2, 4},
-
-        };
-    }
 
     @BeforeSuite
     public void preCondition(){
